@@ -1,0 +1,450 @@
+/* 
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com 
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section { 
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000; 
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;   
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+/* End CSS Reset */
+
+
+html, body {
+    font: normal 14px/16px "Lucida Sans", sans-serif;
+    vertical-align: baseline;
+    height: 100%;
+}
+
+.wrapper {
+    height: 100%;
+}
+
+.card {
+    background-color: #FFF;
+    border: solid 1px #999;
+    border-radius: .5rem;
+    /*    box-shadow: -.25rem .25rem .5rem -.25rem #000;*/
+    cursor: pointer;
+    display: inline-block;
+    width: 7rem;
+    height: 10rem;
+    padding: .7rem;
+    position: relative;
+    text-align: center;
+    vertical-align: bottom;
+}
+
+.card::after {
+    display: block;
+    width: 100%;
+    height:100%;
+    content: "";
+    position: absolute;
+    top:0;
+    left: 0;
+}
+.card::after {
+    background: repeating-radial-gradient( circle, rgb(0,202,202), rgb(0,202,202) 4px, #4b026f 4px, #4b026f 6px);
+    border: solid 5px #ddd;
+    border-radius: .5rem;
+    box-sizing: border-box;
+}
+
+.card.show::after,
+.card.pullup::after {
+    display: none;
+}
+
+.spades, .club { color: black }
+.diamonds, .hearts { color: red }
+
+.card .top-left, .card .bottom-right {
+    font-size: 1rem;
+    font-weight: bold;
+    position: absolute;
+}
+
+.card .top-left {
+    left: .8rem;
+}
+
+.card .bottom-right {
+    transform: rotate(180deg);
+    bottom: .7rem;
+    right: .8rem;
+}
+
+.card .top-left::after, .card .bottom-right::after {
+    position: absolute;
+    font-size: 1.3rem;
+}
+
+.card .top-left::after { left: 0; top: 1rem; }
+.card .bottom-right::after { bottom: -1rem; right: 0 }
+
+.spades .top-left::after, .spades .bottom-right::after {
+    content: "\2660"
+}
+
+.club .top-left::after, .club .bottom-right::after {
+    content: "\2663"
+}
+
+.hearts .top-left::after, .hearts .bottom-right::after {
+    content: "\2665"
+}
+
+.diamonds .top-left::after, .diamonds .bottom-right::after {
+    content: "\2666"
+}
+
+.sign {
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: 2.8rem;
+    line-height: 100%;
+}
+
+.spades .sign:after, .club .sign:after {
+    background: -webkit-linear-gradient(#aaa, #000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hearts .sign:after, .diamonds .sign:after {
+    background: -webkit-linear-gradient(#c00, #f00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.sign::after { 
+    display: inline-block;
+    line-height: 100%;
+    vertical-align: text-top;
+}
+
+.spades .sign::after {
+    content: "\2660"
+}
+
+.club .sign::after {
+    content: "\2663"
+}
+
+.hearts .sign::after {
+    content: "\2665"
+}
+
+.diamonds .sign::after {
+    content: "\2666"
+}
+
+.card.ace .sign {
+    font-size: 6rem;
+    padding-top: 1.5rem;
+}
+
+.card.ace .sign,
+.card.two .sign,
+.card.three .sign {
+    width: 100%;
+}
+
+.card.two .sign { height: 50%; padding-top: .5rem }
+
+.card.three .sign { height: 33% }
+
+.card.two .sign:last-of-type,
+.card.three .sign:last-of-type,
+.card.four .sign:nth-last-child(-n+2),
+.card.five .sign:nth-last-child(-n+2),
+.card.six .sign:nth-last-child(-n+2),
+.card.seven .sign:nth-last-child(-n+2),
+.card.eight .sign:nth-last-child(-n+3),
+.card.nine .sign:nth-last-child(-n+3),
+.card.ten .sign:nth-last-child(-n+5) {
+    transform: rotate(180deg);
+}
+
+.card.four .sign {
+    height: 50%;
+    padding-top: .15rem;
+    width: 40%;
+}
+
+.card.five .sign {
+    height: 50%;
+    width: 40%;
+}
+
+.card.five .sign:nth-of-type(5n-2) {
+    position: absolute;
+    left: 31%;
+    top: 34%
+}
+
+.card.six .sign,
+.card.seven .sign,
+.card.eight .sign {  height: 33%; width: 40%; }
+
+.card.seven .sign:nth-of-type(5n-2) {
+    position: absolute;
+    left: 30%;
+    top: 23%;
+}
+.card.eight .sign:nth-of-type(5n-2) {
+    position: absolute;
+    left: 30%;
+    top: 23%;
+}
+.card.eight .sign:last-of-type {
+    top: 47%;
+}
+
+.card.nine .sign {
+    height: 32%;
+    width: 25.5%;
+}
+
+.card.nine .top-left,
+.card.ten .top-left { left: .5rem }
+.card.nine .bottom-right,
+.card.ten .bottom-right { right: .5rem }
+.card.nine .bottom-right,
+.card.ten .top-left:after{ margin-left: .25rem}
+.card.nine .bottom-right,
+.card.ten .bottom-right:after { margin-right: .25rem }
+
+.card.ten .sign {
+    font-size: 2.3rem;
+    width: 45%;
+}
+
+.card.ten .sign:nth-of-type(5n) {
+    position: absolute;
+    left: 27%;
+    top: 21%;
+}
+
+.card.ten .sign:last-of-type {
+    top: 60%;
+}
+
+.king,
+.queen,
+.jack {
+    background: #fff url('../img/kqj.png') no-repeat top left;
+    background-size: 27rem;
+}
+
+.king.spades { background-position: 1.5rem 1rem }
+.queen.spades { background-position: 1.5rem -9.8rem }
+.jack.spades { background-position: 1.5rem -20.5rem }
+
+.king.hearts { background-position: -5.7rem 1rem }
+.queen.hearts { background-position: -5.7rem -9.8rem }
+.jack.hearts { background-position: -5.7rem -20.5rem }
+
+.king.club { background-position: -12.8rem 1rem }
+.queen.club { background-position: -12.8rem -9.8rem }
+.jack.club { background-position: -12.8rem -20.5rem }
+
+.king.diamonds { background-position: -20rem 1rem }
+.queen.diamonds { background-position: -20rem -9.8rem }
+.jack.diamonds { background-position: -20rem -20.5rem }
+
+.king .top-left,
+.queen .top-left { left: .5rem }
+.jack .top-left::after { left: -.2rem; margin-top: .2rem }
+
+.king .bottom-right,
+.queen .bottom-right { right: .5rem }
+.jack .bottom-right::after { right: -.1rem }
+
+/* hollow style overrides */
+.hollow .spades .top-left::after,
+.hollow .spades .bottom-right::after {
+    content: "\2664"
+}
+
+.hollow .hearts .top-left::after,
+.hollow .hearts .bottom-right::after {
+    content: "\2661"
+}
+
+.hollow .club .top-left::after,
+.hollow .club .bottom-right::after {
+    content: "\2667"
+}
+
+.hollow .diamonds .top-left::after,
+.hollow .diamonds .bottom-right::after {
+    content: "\2662"
+}
+
+
+/* game interface */
+.deck { display: none }
+.row {
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 2rem;
+    width: 100%;
+}
+
+#foundation {
+    float: right;
+}
+#foundation > div {
+    border: solid 2px #999;
+    border-radius: .5rem;
+    float: right;
+    height: 11rem;
+    margin-left: 1rem;
+    width: 8rem;
+}
+
+#remaining-pile {
+    float: left;
+    height: 11rem;
+    margin-left: 1rem;
+}
+
+#pile-facedown, #pile-faceup {
+    border: solid 2px #999;
+    border-radius: .5rem;
+    display: inline-block;
+    height: 100%;
+    margin-right: 3rem;
+    width: 8rem;
+}
+
+#piles-wrapper {
+    height: 100%;
+    text-align: center;
+}
+#piles-wrapper > div {
+    display: inline-block;
+    /*box-shadow: -.25rem .25rem .5rem -.25rem #000;*/
+    height: 100%;
+    margin-left: 1rem;
+    position: relative;
+    width: 8.3rem;
+}
+#piles-wrapper > div::before {
+    border: solid 2px #999;
+    border-radius: .5rem;
+    content: "";
+    display: inline-block;
+    height: 11rem;
+    width: 95%;
+}
+#piles-wrapper .card {
+    box-shadow: none;
+    position: absolute;
+    left:-.2rem;
+    top: -.2rem;
+}
+
+#pile-facedown, #pile-faceup, #foundation .droppable { position: relative }
+#remaining-pile .card,
+#foundation .droppable .card{
+    position: absolute;
+    top: -.4em;
+    left: -.2em;
+}
